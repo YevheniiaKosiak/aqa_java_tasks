@@ -1,6 +1,6 @@
 package lesson1;
 
-public class task2 {
+public class Task2 {
     /* Мое имя
 Вывести на экран свое имя 5 строк по 10 раз (через пробел).
 System.out.println, System.out.print можно использовать только по одному разу

@@ -1,6 +1,6 @@
 package lesson1;
 
-public class task5 {
+public class Task5 {
     /* Реализовать функцию, которая принимает строку и возвращает ее же в обратном виде
      например "Hello world!!!" -> "!!!dlrow olleH" */
     public static void main(String[] args) {
