@@ -1,44 +1,23 @@
 import lesson1.Task1;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+        import org.testng.annotations.DataProvider;
+        import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
+        import static org.testng.Assert.*;
 
 public class Test1 {
 
-    int Minimum = Task1.min(3, 5, 2);
-
-    @Test
-    public void min1() {
-        int actual = Minimum;
-        int expected = 2;
-        assertTrue(actual == expected, String.format("Найденное минимальное значение %d должно быть равно " +
-                "ожидаемому минимальному значению %d", actual, expected));
+    @Test(dataProvider = "provider")
+    public void min(int value1,int value2,int value3, int expected, String str) {
+        int actual = Task1.min(value1, value2, value3);
+        assertEquals(expected,actual, String.format("Expected  %d to be equal %d", expected, actual));
     }
 
-    @Test
-    public void min2() {
-        int actual = Minimum;
-        int expected = 3;
-        assertFalse(actual == expected, String.format("Найденное минимальное значение %d не должно быть равно " +
-                "ожидаемому значению %d", actual, expected));
+    @DataProvider(name = "provider")
+    public Object[][] provider() {
+        return new Object[][]{
+                {3,5,2,2, "1-th"},
+                {2,3,5,2, "2-th"},
+                {5,2,3,2, "3-th"}
+        } ;
     }
-
-    @Test
-    public void min3() {
-        int actual = Minimum;
-        int expected = 5;
-        assertFalse(actual == expected, String.format("Найденное минимальное значение %d не должно быть равно " +
-                "ожидаемому значению %d", actual, expected));
-    }
-
-    @Test
-    public void min4() {
-        int actual = Minimum;
-        int expected = 1;
-        assertFalse(actual == expected, String.format("Найденное минимальное значение %d не должно быть равно " +
-                "ожидаемому значению %d", actual, expected));
-    }
-
 }
