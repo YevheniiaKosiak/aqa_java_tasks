@@ -1,10 +1,16 @@
 import lesson1.Task1;
-        import org.testng.annotations.DataProvider;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
         import org.testng.annotations.Test;
 
         import static org.testng.Assert.*;
 
 public class Test1 {
+
+    @BeforeClass
+    public void start() {
+        System.out.println("=*=*=*=*=*=*=*=*=*=");
+    }
 
     @Test(dataProvider = "provider")
     public void min(int value1,int value2,int value3, int expected, String str) {
